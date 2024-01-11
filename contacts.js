@@ -39,6 +39,7 @@ async function addContact(name, email, phone) {
   };
   contacts.push(newContact);
   await fsPromises.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
+  return newContact;
 }
 
 export { listContacts, getContactById, removeContact, addContact };
